@@ -1,8 +1,10 @@
 {
+  "homepage" : "http://adarshperi.github.io/React",
   "name": "robofriends",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "gh-pages": "^2.0.1",
     "react": "^16.2.0",
     "react-dom": "^16.2.0",
     "react-particles-js": "^2.6.0",
@@ -10,9 +12,12 @@
     "tachyons": "^4.9.0"
   },
   "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
-    "test": "react-scripts test --env=jsdom",
-    "eject": "react-scripts eject"
+     "predeploy": "npm run build",
+      "deploy": "npm run cleanup && gh-pages -d build -b deploy -e build",
+      "cleanup": "rm -rf node_modules/gh-pages/.cache",
+      "start": "react-scripts start",
+      "build": "react-scripts build",
+      "test": "react-scripts test --env=jsdom",
+      "eject": "react-scripts eject"
   }
 }
